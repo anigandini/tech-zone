@@ -1,7 +1,7 @@
 import { Product } from '../interfaces/product.interface'
 import RedeemButton from '../components/RedeemButton'
 import styled from 'styled-components'
-import Image from 'next/Image'
+import Image from 'next/image'
 
 
 const StyledCard = styled.div`
