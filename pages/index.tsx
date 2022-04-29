@@ -8,6 +8,10 @@ import illustrations from '../assets/illustrations_sprite.webp'
 import icons from '../assets/icons_sprite.webp'
 import Footer from '../components/Footer'
 import { handlerPoints } from './api/points'
+import Catalogue from "../components/Catalogue"
+import { handler } from './api/redeem'
+import { Toaster } from 'react-hot-toast'
+import Hero from '../components/Hero'
 
 
 type Props = {
@@ -17,12 +21,24 @@ type Props = {
 }
 
 const Home: NextPage<Props> = (props: Props) => {
-  const [user, setUser] = useState<User>(props.user)
+  const [user, setUser] = useState<User | Partial<User>>(props.user)
 
   const addPoints = async (amount: 1000|5000|7500) => {
     const response = await handlerPoints(amount)
-    console.log(response['New Points'])
     setUser({points: response['New Points']})
+  }
+
+  const redeemProduct = async (product: Product) => {
+    const points: number = user.points? user.points : 0
+    const response = await handler(product._id)
+    let res = 400
+    if (response.message === "You've redeem the product successfully") {
+      const newPoints =  points - product.cost
+      setUser({points: newPoints,
+              redeemHistory: user.redeemHistory?.concat(product)})
+      res = 200
+    }
+    return res
   }
 
   return (
@@ -36,7 +52,17 @@ const Home: NextPage<Props> = (props: Props) => {
       </Head>
 
       <NavBar user={user} addPoints={addPoints}/>
+      <Hero/>
       <main>
+      <Toaster position="bottom-left" />
+        <section id='catalogue'>
+          <Catalogue 
+          products={props.products}
+          categories={props.categories}
+          points={user.points? user.points : 0}
+          redeemProduct={redeemProduct}
+          />
+        </section>
       </main>
       <Footer/>
     </div>
