@@ -46,6 +46,10 @@ const Home: NextPage<Props> = (props: Props) => {
       <Head>
         <title>Tech Zone | Aerolab</title>
         <meta name="description" content="A beautiful catalog of products" />
+        <meta property="og:title" content="Tech Zone"/>
+        <meta property="og:image" content="https://github.com/Aerolab/frontend-developer-coding-challenge/raw/main/assets/github-cover-aerolab-frontend-developer-coding-challenge.png"/>
+        <meta property="og:description"
+          content="A beautiful catalog of products. Here you’ll be able to exchange all of your hard-earned Aeropoints and exchange them for cool tech."/>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" href={illustrations.src} as="image" />
         <link rel="preload" href={icons.src} as="image" />
