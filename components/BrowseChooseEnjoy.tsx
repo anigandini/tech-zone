@@ -15,6 +15,7 @@ const StyledBrowseChooseEnjoy = styled.div`
 
     @media (min-width: 768px) {
         flex-direction: row;
+        gap: 0.2rem;
     }
 
     @media (min-width: 1025px) {

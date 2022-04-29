@@ -107,9 +107,11 @@ export const StyledWalkthroughCard = styled.div`
     }
 
     @media(min-width: 768px) {
+        width: 33.3%;
+        display: flex;
+
         & .image {
-            width: 100%;
-            height: 250px;
+            height: 80%;
             background: var(--color-special-illustration-bg);
             border: 1px solid var(--color-neutrals-300);
             border-radius: 24px 24px 0px 0px;
@@ -143,17 +145,21 @@ export const StyledWalkthroughCard = styled.div`
                 [row2-start] "description description" auto [row2-end]
                 / auto auto;
             align-items: center;
+            height: 100%;
         }
 
         .content h3 {
             grid-area: title;
             padding: 0;
-            font-size: 1.3rem;
+            font-size: 1rem;
+            align-self: start;
         }
 
-        .content figure {
+
+        .content .icon {
             grid-area: icon;
-            justify-self: end;
+            justify-self: start;
+            align-self: start;
         }
 
         .content figure span {
@@ -164,10 +170,13 @@ export const StyledWalkthroughCard = styled.div`
             grid-area: description;
             grid-column: 1/-1;
             text-align: start;
+            font-size: 1rem;
+            width: 100%;
         }
 
         @media(min-width: 1025px) {
-            width: 30%;
+            width: 100%;
+
             &.browse {
                 transform: translateX(6%) rotate(-3deg);
                 z-index: -1;
@@ -179,8 +188,9 @@ export const StyledWalkthroughCard = styled.div`
 
             & figure {
                 width: 400px;
-                height: 400px;
+                height: 300px;
                 background-size: 1932px 1932px;
+                transform: scale(1);
             }
 
             & figure.enjoy {
@@ -200,7 +210,7 @@ export const StyledWalkthroughCard = styled.div`
             }
 
         @media(min-width: 1400px) {
-            width: 25%;
+            width: 33.25rem;
         }
         
 

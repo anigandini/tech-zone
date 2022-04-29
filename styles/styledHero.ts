@@ -77,9 +77,9 @@ export const StyledHero = styled.div`
 
     & figure.hero {
         width: 400px;
-        height: 400px;
+        height: 450px;
         margin: 0;
-        background: var(--illustrations-sprite) -85px 450px;
+        background: var(--illustrations-sprite) -85px 511px;
         margin-top: 3rem;
     }
 
