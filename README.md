@@ -1,6 +1,6 @@
 # TECH ZONE | Aerolab Front End Challenge
 
-Hi! this is my version of the [Aerolab challenge.](https://github.com/Aerolab/frontend-developer-coding-challenge) You can check the [live demo here](tech-zone-aerolab-dekpe6xbc-anigandini.vercel.app)
+Hi! this is my version of the [Aerolab challenge.](https://github.com/Aerolab/frontend-developer-coding-challenge) You can check the [live demo here](https://tech-zone-aerolab-dekpe6xbc-anigandini.vercel.app)
 
 
 # What I used
