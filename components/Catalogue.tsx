@@ -1,5 +1,5 @@
 import { Product } from '../interfaces/product.interface'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import ProductCard from './ProductCard'
 import Select from 'react-select'
 import { StyledCatalogue} from '../styles/StyledCatalogue'
@@ -39,6 +39,7 @@ const Catalogue = (props: {products: Product[], categories: string[],  points: n
 
     const options: Option[] = []
     props.categories.map((category: string) => options.push({value: category, label:category}))
+
 
     
     return <StyledCatalogue>
