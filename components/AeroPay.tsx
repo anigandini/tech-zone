@@ -1,18 +1,25 @@
-import User from '../interfaces/user.interface'
+import { User } from '../interfaces/user.interface'
 import AddBalance from './AddBalance'
-import RedeemHistory from './RedeemHistory'
-import { useState } from 'react'
+import styled from 'styled-components'
 
-const AeroPay = (props: {user: User, addPoints: Function}) => {
-    const [activeModule, setActiveModule] = useState<'balance'|'history'>('balance')
+const StyledAeroPay = styled.div`
+    & h3 {
+        color: var(--color-neutrals-900);
+        padding-left: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--color-neutrals-300);
+    }
+
+`
+
+const AeroPay = (props: {user: User|Partial<User>, addPoints: Function}) => {
     
-    return <div>
-        <div>
-            <button className={activeModule === 'balance'? 'active': ''} onClick={()=>setActiveModule('balance')}>Add Balance</button>
-            <button className={activeModule === 'history'? 'active': ''} onClick={()=>setActiveModule('history')}>Redeem History</button>
-        </div>
-        {activeModule === 'balance' ? <AddBalance user={props.user} addPoints={props.addPoints}/> : <RedeemHistory user={props.user}/>}
-    </div> 
+    return <StyledAeroPay>
+        <h3>
+            Add Balance
+        </h3>
+        <AddBalance user={props.user} addPoints={props.addPoints}/>
+    </StyledAeroPay> 
 }
 
 export default AeroPay 

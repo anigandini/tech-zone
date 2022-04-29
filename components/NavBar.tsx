@@ -52,7 +52,7 @@ const StyledHeader = styled.header`
   }
 `
 
-const NavBar = (props: {user: User, addPoints: Function}) => {
+const NavBar = (props: {user: User | Partial<User>, addPoints: Function}) => {
   const [ isOpen, setIsOpen ] = useState<boolean>(false) 
   return <StyledHeader> 
             <a href='https://aerolab.us/'>

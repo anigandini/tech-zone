@@ -60,7 +60,7 @@ const StyledAddBalanceContent = styled.div`
     }
 `
 
-const AddBalance = (props: {user: User, addPoints: Function}) => {
+const AddBalance = (props: {user: User|Partial<User>, addPoints: Function}) => {
     const [ activeButton, setActiveButton] = useState<1000|5000|7500>(5000)
     const handleClick = (amount: 1000|5000|7500) => {
         setActiveButton(amount)
